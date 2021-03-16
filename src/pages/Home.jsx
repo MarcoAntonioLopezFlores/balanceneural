@@ -11,6 +11,7 @@ import { motion} from 'framer-motion'
 import ContactComponent from '../components/ContactComponent'
 
 import logo from '../assets/img/bgpink.svg'
+import ProductComponent from '../components/ProductComponent'
 /*
 style={{
     backgroundRepeat:"no-repeat",
@@ -44,6 +45,7 @@ const Home = () => {
                 </motion.div>
                 <HealthCenter />
                 <ServicesComponent/> 
+                <ProductComponent/>
                 <UbicationComponent/>
                 <div style={{backgroundColor:"#C9D468"}}>
                 <ContactComponent/>
