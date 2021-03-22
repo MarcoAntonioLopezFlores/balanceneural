@@ -12,6 +12,7 @@ import ContactComponent from '../components/ContactComponent'
 
 import logo from '../assets/img/bgpink.svg'
 import ProductComponent from '../components/ProductComponent'
+import ContactUs from '../components/ContactUs'
 /*
 style={{
     backgroundRepeat:"no-repeat",
@@ -50,6 +51,7 @@ const Home = () => {
                 <div style={{backgroundColor:"#C9D468"}}>
                 <ContactComponent/>
                 </div>
+                <ContactUs/>
                 <FooterComponent/>
                 
             

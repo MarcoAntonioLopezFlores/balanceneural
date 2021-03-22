@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 const UbicationComponent = () => {
     const classes = useStyles()
     return (
-        <Row id="contact" className={classes.root}>
+        <Row id="ubication" className={classes.root}>
             <Col md>
                 <section className={classes.containerText}>
                     <div className={classes.text}>
