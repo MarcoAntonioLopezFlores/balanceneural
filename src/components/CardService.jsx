@@ -27,7 +27,7 @@ export default function CardService(props) {
   const classes = useStyles();
 
   return (
-    <Card elevation={5} className={classes.root}>
+    <Card  elevation={5} className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}

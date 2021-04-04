@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import CardLocation from './CardLocation'
 
 
 const MapComponent = () => {
@@ -13,7 +14,7 @@ const MapComponent = () => {
     />
     <Marker position={position}>
       <Popup>
-        BALANCENURAL
+        <CardLocation/>
       </Popup>
     </Marker>
         </MapContainer>
