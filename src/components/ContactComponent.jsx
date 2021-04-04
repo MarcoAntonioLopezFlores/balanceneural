@@ -48,7 +48,7 @@ const ContactComponent = () => {
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 href="tel:7772501120" 
-                                style={{ fontWeight: "bold", color: "white", backgroundColor: "#6B4C35" }} variant="contained">
+                                style={{ width:"90%",fontWeight: "bold", color: "white", backgroundColor: "#6B4C35" }} variant="contained">
                                 <PhoneIcon fontSize="large" style={{marginRight:5}}/>777 102 1821
                             </Button>
                             
@@ -57,8 +57,8 @@ const ContactComponent = () => {
                             <Button
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                href="tel:7772501120" 
-                                style={{ fontWeight: "bold", color: "white", backgroundColor: "#6B4C35" }} variant="contained">
+                                href="https://api.whatsapp.com/send?phone=527771112488&text=Hola%20deseo%20adquirir%20un%20servicio%20con%20ustedes" 
+                                style={{ width:"90%",fontWeight: "bold", color: "white", backgroundColor: "#6B4C35" }} variant="contained">
                                 <WhatsAppIcon fontSize="large" style={{marginRight:5}}/> 777 216 8449
                             </Button>
                         </li>
@@ -66,8 +66,8 @@ const ContactComponent = () => {
                             <Button
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                href="tel:7772501120" 
-                                style={{ fontSize:12,fontWeight: "bold", color: "white", backgroundColor: "#6B4C35" }} variant="contained">
+                                href="https://www.facebook.com/Balanceneural" 
+                                style={{ width:"90%",fontSize:12,fontWeight: "bold", color: "white", backgroundColor: "#6B4C35" }} variant="contained">
                                 <FacebookIcon fontSize="large" style={{marginRight:5}}/>Balanceneural
                             </Button>
                         </li>

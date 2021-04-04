@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../assets/img/logo.png'
 import { Button, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -14,6 +13,7 @@ const Main = () => {
     const classes = useStyles();
     return (
         <React.Fragment>
+        
         <section id="main">
         <div className="main-text">
             <span style={{borderBottom: "2px solid #C9D468"}}>BALANCENEURAL</span> <br /> Health & <br />
@@ -22,7 +22,7 @@ const Main = () => {
         <div 
             
             className={classes.imageLogo}>
-        <img src={logo} width="300" alt="logo" />
+        <img src="https://www.tiendatech.xyz/static/media/logo.ba94657c.png" width="300" alt="balanceneural" />
         </div>
         
         
@@ -38,6 +38,7 @@ const Main = () => {
               Solicitar una cita
             </Button>
         </div>
+        
       </React.Fragment>
     )
 }

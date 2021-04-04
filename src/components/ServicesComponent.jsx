@@ -1,7 +1,10 @@
 import { Grid } from '@material-ui/core'
 import React from 'react'
 import styled from 'styled-components/macro';
+import { services } from '../util/Slides';
 import CardService from './CardService';
+
+
 
 const ServicesContent = styled.div`
 padding:2%;
@@ -40,56 +43,19 @@ const ServicesComponent=()=> {
                 direction="row"
                 justify="space-evenly"
                 >
-                <Grid item sm={4} xs={6}>
+                
+                {services.map((service)=>
+                <Grid item sm={3} xs={6} key={service.alt}>
                 <CardService 
-                        alt="Wellness Plan"
-                        image="#"
-                        title="Wellness Plan"
-                        content="Ofrecemos planes de Bienestar Corporativo para empresas, chek-up integral, estudios de laboratorio, tratamiento médico personalizado y Day Spa. Ideal para equipos de alto rendimiento."
-                        duracion="2 horas"
-                        costo="El precio varía"
+                        alt={service.alt}
+                        image={service.image}
+                        title={service.title}
+                        content={service.content}
+                        duracion={service.duracion}
+                        costo={service.costo}
                     />
-                </Grid>
-                <Grid item sm={4} xs={6}>
-                <CardService 
-                        alt="Acupuntura Médica"
-                        image="#"
-                        title="Acupuntura Médica"
-                        content="Sesión clínico-terapéutica  que equilibra los microsistemas del cuerpo a través de la inserción de agujas ultrafinas, con base en las técnicas ancestrales orientales."
-                        duracion="1 hora"
-                        costo="$500"
-                    />
-                </Grid>
-                <Grid item sm={4} xs={6}>
-                <CardService 
-                        alt="Fitoterapia"
-                        image="#"
-                        title="Fitoterapia"
-                        content="Extractos de plantas medicinales y sus derivados con finalidad terapéutica para prevenir, aliviar o curar enfermedades."
-                        duracion="Duración variable"
-                        costo="El precio varía"
-                    /> 
-                </Grid> 
-                <Grid item sm={4} xs={6}>
-                <CardService 
-                        alt="Medicina Integral"
-                        image="#"
-                        title="Medicina Integral"
-                        content="Cada consulta médica incluye un tratamiento personalizado a base de extractos herbales con efecto terapéutico para que recuperes tu salud de manera limpia y natural."
-                        duracion="30 minutos"
-                        costo="El precio varía"
-                    />
-                </Grid>
-                <Grid item sm={4} xs={6}>
-                <CardService 
-                        alt="Fisioterapia y Rehabilitación"
-                        image="#"
-                        title="Fisioterapia y Rehabilitación"
-                        content="Terapia mediante movimientos de presión, estiramientos y acupresión con aceites herbales y termoterapia  que alivia el dolor, mejora la circulación y oxigenación."
-                        duracion="1 hora"
-                        costo="El precio varía"
-                    />
-                </Grid>  
+                </Grid>                
+                )}
             </Grid>
             
         </ServicesContent>

@@ -1,35 +1,9 @@
-import { Container, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import { Col, Row, UncontrolledCarousel } from 'reactstrap';
 import emailjs from "emailjs-com";
-import Recaptcha from 'react-recaptcha';
-import banner_6 from '../assets/img/banner_6.jpg'
-import banner_7 from '../assets/img/banner_7.jpg'
-import banner_8 from '../assets/img/banner_8.jpg'
+import { secondSlides } from '../util/Slides';
 
-const items = [
-    {
-        src: banner_6,
-        altText: 'Slide 1',
-        caption: '',
-        header: '',
-        key: '1'
-    },
-    {
-        src: banner_7,
-        altText: 'Slide 2',
-        caption: '',
-        header: '',
-        key: '2'
-    },
-    {
-        src: banner_8,
-        altText: 'Slide 3',
-        caption: '',
-        header: '',
-        key: '3'
-    }
-];
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,24 +29,11 @@ const useStyles = makeStyles((theme) => ({
 
 const ContactUs = () => {
     const classes = useStyles()
-    const [verified,setVerified]= React.useState(false)
-    
-    var callback = () => {
-        console.log('Done!!!!');
-
-    };
-
-    
-    var verifyCallback = (response) => {
-        
-        if (response) {
-            setVerified(true)
-        }
-    };
+   
 
     function sendEmail(e) {
         e.preventDefault();
-        if(verified){
+        
             emailjs.sendForm('balancecorreos', 'template_hdofy34', e.target, 'user_OPwkR2N53DEL7A19J0n8p')
 
             .then((result) => {
@@ -83,9 +44,7 @@ const ContactUs = () => {
 
             });
             e.target.reset()
-        }else{
-            alert("error:(")   
-        }
+        
         
 
 
@@ -105,7 +64,7 @@ const ContactUs = () => {
                     
                         <Row>
                             <label htmlFor="subject">Asunto</label>
-                            <input id="subject" type="text" autoFocus className="form-control" required placeholder="Asunto" name="subject" />
+                            <input id="subject" type="text" className="form-control" required placeholder="Asunto" name="subject" />
                         </Row>
                         
                         <Row>
@@ -118,15 +77,7 @@ const ContactUs = () => {
                         </Row>
                         
                         <Row style={{ paddingLeft:30,justifyContent: "center" }}>
-                            <Col sm className="mt-3" style={{width:"100vw"}}>
-                            <Recaptcha
-                                
-                                onloadCallback={callback}
-                                sitekey="6LeFboIaAAAAAJTylFq97fWeubYrnRwuYgiRnhVe"
-                                render="explicit"
-                                verifyCallback={verifyCallback}
-                            />
-                            </Col>
+                            
                             <Col sm>
                             <div 
         style={{ display:"flex",justifyContent:"center"}}>
@@ -137,15 +88,14 @@ const ContactUs = () => {
                         
                 </form>
             </Col>
-            <Col md className="mt-3">
+            <Col style={{display:"flex",flexDirection:"column", justifyContent:"center"}} md >
                 <div>
-                    <UncontrolledCarousel
-                        items={items} />
+                    <UncontrolledCarousel 
+                        items={secondSlides} />
                 </div>
             </Col>
         </Row>
     )
 }
-//key site web 6LeFboIaAAAAAJTylFq97fWeubYrnRwuYgiRnhVe
-//secret key 6LeFboIaAAAAAPVsQvl9dTFNF6KYprH_vlHT_Prm
+
 export default ContactUs

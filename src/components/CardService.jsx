@@ -10,13 +10,16 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     root: {
-    height:"92%",
+      height:"95%",
       width:"90%",
-      margin:"5%"
+      margin:"5%",
+      /*'&:hover':{
+        transform: 'scale(1.05)'
+      }*/
     },
     media: {
       width:"100%",
-      height:120
+      height:200
     },
   });
 
@@ -24,7 +27,7 @@ export default function CardService(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card elevation={5} className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}

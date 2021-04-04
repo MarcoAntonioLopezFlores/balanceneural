@@ -1,63 +1,70 @@
-
-import React from 'react'
-import AppBarComponent from '../components/AppBarComponent'
-import UbicationComponent from '../components/UbicationComponent'
-import FooterComponent from '../components/FooterComponent'
-import HealthCenter from '../components/HealthCenter'
-import Main from '../components/Main'
-import ServicesComponent from '../components/ServicesComponent'
-import WhichAreComponent from '../components/WhichAreComponent'
-import { motion} from 'framer-motion'
-import ContactComponent from '../components/ContactComponent'
-
+import React, { Suspense ,lazy } from 'react'
 import logo from '../assets/img/bgpink.svg'
-import ProductComponent from '../components/ProductComponent'
-import ContactUs from '../components/ContactUs'
-/*
-style={{
-    backgroundRepeat:"no-repeat",
-    backgroundSize:"cover",
-    backgroundImage:'url(https://image.freepik.com/foto-gratis/vista-superior-helechos-hojas-espacio-copia_23-2148678607.jpg)'
-}}
-*/
+import AppBarComponent from '../components/AppBarComponent'
+import Main from '../components/Main'
+import WhichAreComponent from '../components/WhichAreComponent'
+import HealthCenter from '../components/HealthCenter'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { motion } from 'framer-motion'
+const UbicationComponent = lazy(()=>import('../components/UbicationComponent'))
+const ServicesComponent = lazy(()=>import('../components/ServicesComponent'))
+const ContactComponent = lazy(()=>import('../components/ContactComponent'))
+const ProductComponent = lazy(()=>import('../components/ProductComponent'))
+const ContactUs = lazy(()=>import('../components/ContactUs'))
+const FooterComponent = lazy(()=>import('../components/FooterComponent'))
+
 const Home = () => {
-    
     return (
-        <div style={{
-            backgroundRepeat:"repeat",
-            backgroundImage:`url(${logo})`
-        }}>
-            <AppBarComponent/>
-            
-                <Main></Main>
-                
-                <motion.div 
+        <HelmetProvider>
+            <div style={{
+                backgroundRepeat: "repeat",
+                backgroundImage: `url(${logo})`
+            }}>
+                <Helmet>
+                    <title>Balanceneural</title>
+                    <link rel="canonical" href="https://www.tiendatech.xyz" />
+                    <meta name="description" content="¿Quieres aliviar tus enfermedades? Visita el Centro de Medicina Integral ✅"/>
+                    <meta property="og:title" content="Balanceneural" />
+                    <meta property="og:description" content="Balanceneural Centro de Medicina Integral" />
+                    <meta
+                        property="og:image"                        
+                        content="https://scontent.fcvj1-1.fna.fbcdn.net/v/t1.6435-9/155789125_3626701080719056_8309499224310503353_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=FuPHmsDXOAgAX8_m2vO&_nc_ht=scontent.fcvj1-1.fna&oh=78749015b40721e146443579c94abc5c&oe=608E13F5"
+                    />
+                    <meta property="og:url" content="balanceneural.com" />
+                    <meta property="og:site_name" content="Balanceneural" />
+                    <meta property="og:locale" content="es_ES" />
+                    <meta property="og:type" content="website" />
+                    <meta property="fb:app_id" content="Balanceneural" />
+                </Helmet>
+                <AppBarComponent />
+                <Main />
+                <motion.div
                     initial={{
-                        opacity:0,
+                        opacity: 0,
                     }}
                     animate={{
-                        opacity:1
+                        opacity: 1
                     }}
                     transition={{
-                        duration:1
+                        duration: 1
                     }}
-                    style={{backgroundColor:"#C9D468"}}>
-                    <WhichAreComponent/>
+                    style={{ backgroundColor: "#C9D468" }}>
+                    <WhichAreComponent />
                 </motion.div>
                 <HealthCenter />
-                <ServicesComponent/> 
-                <ProductComponent/>
-                <UbicationComponent/>
-                <div style={{backgroundColor:"#C9D468"}}>
-                <ContactComponent/>
-                </div>
-                <ContactUs/>
-                <FooterComponent/>
                 
-            
-            
-            
-        </div>
+                <Suspense fallback={<div>...</div>}>
+                <ServicesComponent />
+                <ProductComponent />
+                <UbicationComponent />
+                <div style={{ backgroundColor: "#C9D468" }}>
+                    <ContactComponent />
+                </div>
+                <ContactUs />
+                <FooterComponent />
+                </Suspense>
+            </div>
+        </HelmetProvider>
     )
 }
 
